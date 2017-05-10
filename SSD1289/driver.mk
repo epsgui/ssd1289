@@ -1,0 +1,2 @@
+GFXINC += SSD1289
+GFXSRC += SSD1289/gdisp_lld_SSD1289.c
