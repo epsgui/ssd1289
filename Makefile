@@ -27,7 +27,7 @@ ifeq ($(OPT_OS),chibios)
 	CHIBIOS_DEVICE_FAMILY	= STM32F1xx
 	CHIBIOS_STARTUP		= startup_stm32f1xx
 	CHIBIOS_PORT		= v7m
-	CHIBIOS_LDSCRIPT	= STM32F103x8.ld
+	CHIBIOS_LDSCRIPT	= STM32F103xE.ld
 	# We define a non standard board script as this is not a standard ChibiOS supported board
 	include HY-STM32/board.mk
 endif
