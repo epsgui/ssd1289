@@ -62,8 +62,8 @@
 
 #define GPIOC_LED1		6
 #define GPIOC_LED2		7
-#define GPIOD_LED3		13
-#define GPIOD_LED4		6
+#define GPIOB_LED3		14
+#define GPIOB_LED4		15
 
 #define GPIOE_BUZZER		0
 
@@ -136,7 +136,7 @@
  * PB15 - GPIO J1.55
  */
 #define VAL_GPIOBCRL            0x38888888      /*  PB7...PB0 */
-#define VAL_GPIOBCRH            0x88888888      /* PB15...PB8 */
+#define VAL_GPIOBCRH            0x88883888      /* PB15...PB8 */
 #define VAL_GPIOBODR            0xFFFFFFFF
 
 /*

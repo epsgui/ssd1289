@@ -131,9 +131,9 @@ static GFXINLINE void setpin_reset(GDisplay *g, bool_t state) {
   (void) g;
 
   if(state)
-    palClearPad(GPIOE, GPIOE_TFT_RST);
+    palClearPad(GPIOB, 11);
   else
-    palSetPad(GPIOE, GPIOE_TFT_RST);//todo: define pins tft
+    palSetPad(GPIOB, 11);//todo: define pins tft
 }
 
 static GFXINLINE void set_backlight(GDisplay *g, uint8_t percent) {

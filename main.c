@@ -17,6 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "gfx.h"
+//#include "board_ILI9481.h"
 #include "board_SSD1289.h"
 #include "ginput_lld_toggle_board.h"
 
@@ -44,11 +45,11 @@ int main(void) {
   gfxInit();
 
   // Initialize LED3 and LED4 pins
-  palSetPadMode(GPIOD, GPIOD_LED3, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetPadMode(GPIOD, GPIOD_LED4, PAL_MODE_OUTPUT_PUSHPULL);
+  palSetPadMode(GPIOB, GPIOB_LED3, PAL_MODE_OUTPUT_PUSHPULL);
+  palSetPadMode(GPIOB, GPIOB_LED4, PAL_MODE_OUTPUT_PUSHPULL);
   // and take it OFF
-  palClearPad(GPIOD, GPIOD_LED3);
-  palClearPad(GPIOD, GPIOD_LED4);
+  palClearPad(GPIOB, GPIOB_LED3);
+  palClearPad(GPIOB, GPIOB_LED4);
 
   /*
    * Activates the serial driver 1 using the driver default configuration.
@@ -79,7 +80,7 @@ int main(void) {
 
   font_t font = gdispOpenFont("DejaVuSans24");
 
-  gdispDrawString(16, 16, "STM32F103V + SSD1289", font, White);
+  gdispDrawString(16, 16, "STM32F103V + ILI9481", font, White);
   gdispDrawString(16, 64, "GDISP_ROTATE_DEFAULT", font, Red);
 
   gdispDrawStringBox(0, (height/2)-20, width, 40, "ChibiOS/RT + uGFX", font, White, justifyCenter);
@@ -91,9 +92,10 @@ int main(void) {
    * sleeping in a loop and check the button state.
    */
   while (TRUE) {
-    if (palReadPad(GPIOE, GPIOE_BTN1)){
-        sdPut(&SD1, 'A');
-    }
+//    if (palReadPad(GPIOE, GPIOE_BTN1)){
+//        sdPut(&SD1, 'A');
+//    }
+    palTogglePad(GPIOB, GPIOB_LED3);
     chThdSleepMilliseconds(500);
   }
 }
