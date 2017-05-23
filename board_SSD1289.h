@@ -77,8 +77,8 @@ static GFXINLINE void init_board(GDisplay *g) {
                    (1 << 15), 0 };
 
     /* FSMC sa alternate function */
-    palSetBusMode(&busD, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
-    palSetBusMode(&busE, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+//    palSetBusMode(&busD, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+//    palSetBusMode(&busE, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
 
     /*
      * NOTE: stm32F10x.h is FAULTY on FSMC
